@@ -27,8 +27,10 @@ Conventional CMOS Full Adder is the most basic full adder implementation techniq
 
 ## Reference Circuit Diagram
 <img width="1371" alt="Reference_Ckt" src="https://user-images.githubusercontent.com/59500283/155388072-53c63be1-69c2-4d84-90e7-4cb95889fb67.png">
+
 ## Reference Circuit Waveform
 <img width="1436" alt="Reference_Waveform" src="https://user-images.githubusercontent.com/59500283/155388452-6be190ea-c1f7-40b9-b905-c51b84594cd4.png">
+
 ## Desirable Truth Table
 ![Full_adder_Truth_Table](https://user-images.githubusercontent.com/59500283/155389650-b7823b97-2f40-4cf2-bb7a-72e5364af9b2.jpeg)
 
