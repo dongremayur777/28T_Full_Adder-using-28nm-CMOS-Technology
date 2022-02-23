@@ -45,49 +45,99 @@ Note: The transmission gate using M24 nad M25 is soley used to separate the inpu
 
 ## Netlist
 ```
+
+
 *  Generated for: PrimeSim
-*  Design library name: Feynman_gate
-*  Design cell name: Feynman_gate
+*  Design library name: full_adder
+*  Design cell name: Carry_tb
 *  Design view name: schematic
 .lib 'saed32nm.lib' TT
 
 *Custom Compiler Version S-2021.09
-*Mon Feb 21 17:53:36 2022
+*Wed Feb 23 18:37:06 2022
 
-.global gnd! vdd!
+.global gnd!
 ********************************************************************************
-* Library          : Feynman_gate
-* Cell             : Feynman_gate
+* Library          : full_adder
+* Cell             : Carry_Block
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xm24 p net80 a gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 net74 q b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 q net74 b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net74 p gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm0 q b net74 gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm25 a gnd! p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm4 p q b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm3 q p b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm2 q b p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net74 p net80 vdd! p105 w=0.1u l=0.03u nf=1 m=1
-v26 net80 gnd! dc=1.8
-v17 b gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 2u 4u )
-v18 a gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 1u 2u )
+.subckt carry_block a b c gnd_1 vdd carry
+xm11 carry carry_bar gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm8 net30 a gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm7 carry_bar b net30 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm2 net9 b gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm1 net9 a gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm31 carry_bar c net9 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm12 carry carry_bar vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm10 net34 a vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm9 carry_bar b net34 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm5 net23 b vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm4 net23 a vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm3 carry_bar c net23 vdd p105 w=0.1u l=0.03u nf=1 m=1
+.ends carry_block
 
+********************************************************************************
+* Library          : full_adder
+* Cell             : Inverter
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt inverter gnd_1 input not vdd
+xm0 not input vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm1 not input gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+.ends inverter
 
+********************************************************************************
+* Library          : full_adder
+* Cell             : Sum_Block
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt sum_block a b c carry_bar gnd_1 sum_bar vdd
+xm29 sum_bar c net174 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm30 net174 b net178 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm31 net178 a net111 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm18 net111 c vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm19 sum_bar carry_bar net111 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm20 net111 a vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm21 net111 b vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm26 sum_bar c net160 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm28 net164 b gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm27 net160 a net164 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm23 net150 a gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm22 sum_bar carry_bar net150 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm24 net150 b gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm25 net150 c gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+.ends sum_block
 
+********************************************************************************
+* Library          : full_adder
+* Cell             : Carry_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi24 a b c gnd! net55 carry carry_block
+v1 net55 gnd! dc='1.8V'
+v22 c gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 20u 40u )
+v21 b gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 10u 20u )
+v20 a gnd! dc=0 pulse ( 0 1.8 0 0.1u 0.1u 5u 10u )
+c2 carry gnd! c=1p
+c19 sum gnd! c=1p
+xi23 gnd! net50 sum net55 inverter
+xi9 gnd! carry net33 net55 inverter
+xi15 a b c net33 gnd! net50 net55 sum_block
 
-
-
-
-
-.tran '1u' '20u' name=tran
+.tran '1u' '40u' name=tran
 
 .option primesim_remove_probe_prefix = 0
 .probe v(*) i(*) level=1
-.probe tran v(a) v(b) v(p) v(q)
+.probe tran v(a) v(b) v(c) v(carry) v(sum)
 
 .temp 25
 
@@ -100,88 +150,20 @@ v18 a gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 1u 2u )
 
 
 
-
-
-
 .end
+
 ```
-## Waveform
-![image](https://user-images.githubusercontent.com/58599984/155003205-6933feb1-ec81-4627-8230-37746e44282a.png)
-# Interchanging the outputs and inputs
 
-## Schematic
-![image](https://user-images.githubusercontent.com/58599984/155004055-dc48126a-26dd-4999-89d2-43b3a89d3ebf.png)
-![image](https://user-images.githubusercontent.com/58599984/155004113-993a4526-4246-4214-a6da-bc1e19a51a54.png)
-## Netlist
-```
-*  Generated for: PrimeSim
-*  Design library name: Feynman_gate
-*  Design cell name: Feynman_gate
-*  Design view name: schematic
-.lib 'saed32nm.lib' TT
-
-*Custom Compiler Version S-2021.09
-*Mon Feb 21 17:41:35 2022
-
-.global gnd! vdd!
-********************************************************************************
-* Library          : Feynman_gate
-* Cell             : Feynman_gate
-* View             : schematic
-* View Search List : hspice hspiceD schematic spice veriloga
-* View Stop List   : hspice hspiceD
-********************************************************************************
-xm24 p net80 a gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm7 net74 q b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm6 q net74 b gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net74 p gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm0 q b net74 gnd! n105 w=0.1u l=0.03u nf=1 m=1
-xm25 a gnd! p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm4 p q b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm3 q p b vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm2 q b p vdd! p105 w=0.1u l=0.03u nf=1 m=1
-xm1 net74 p net80 vdd! p105 w=0.1u l=0.03u nf=1 m=1
-v26 net80 gnd! dc=1.8
-v17 q gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 2u 4u )
-v18 p gnd! dc=0.01 pulse ( 1.8 0 0.1n 0.1n 0.1n 1u 2u )
-
-
-
-
-
-
-
-
-.tran '1u' '20u' name=tran
-
-.option primesim_remove_probe_prefix = 0
-.probe v(*) i(*) level=1
-.probe tran v(a) v(b) v(p) v(q)
-
-.temp 25
-
-
-
-.option primesim_output=wdf
-
-
-.option parhier = LOCAL
-
-
-
-
-
-
-.end
-```
-## Waveform
-![image](https://user-images.githubusercontent.com/58599984/155003970-690e6a0e-0664-4543-96f0-a0aa1cea5a87.png)
 ## Conclusion
-Thus, the input and output can be interchanged in the Feynman Gate and the functionality of the Feynman Gate is verified using 32nm Technology node of Synopsys.
+Thus, the addition for a single-bit is achieved using 28T full adder.
 ## Acknowledgement
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
 ## References
-1.	U. Kumar, L. Sahu and U. Sharma, "Performance evaluation of reversible logic gates," 2016 International Conference on ICT in Business Industry & Government (ICTBIG), 2016, pp. 1-4, doi: 10.1109/ICTBIG.2016.7892693.
-2.	A. K. Rajput, S. Chouhan and M. Pattanaik, "Low Power Boolean Logic Circuits using Reversible Logic Gates," 2019 International Conference on Advances in Computing, Communication and Control (ICAC3), 2019, pp. 1-6, doi: 10.1109/ICAC347590.2019.9036799.
+1)Analysis and Performance Evaluation of 1-bit Full Adder Using Different Topologies
+http://pnrsolution.org/Datacenter/Vol5/Issue1/26.pdf
+2)Power and Delay Comparison in between Different types of Full Adder Circuits
+https://www.ijareeie.com/upload/september/7_Power%20and%20Delay%20Comparison.pdf
+3)Youtube Video - https://www.youtube.com/watch?v=AXU_J4wr_yA
+  
