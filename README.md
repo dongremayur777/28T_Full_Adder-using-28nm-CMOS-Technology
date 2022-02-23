@@ -41,9 +41,16 @@ Conventional CMOS Full Adder is the most basic full adder implementation techniq
 ## Inverter_Block and it's Symbol
 <img width="652" alt="Inverter_Block" src="https://user-images.githubusercontent.com/59500283/155388618-816e32ce-0ad8-4ee1-a714-6e3a7c4a64df.png">
 <img width="660" alt="Inverter_Symbol" src="https://user-images.githubusercontent.com/59500283/155388658-538a86b3-c842-47f0-beb3-12bd8d25db28.png">
+
 ## Carry_Block and it's Symbol
+
 <img width="1422" alt="Carry_Block" src="https://user-images.githubusercontent.com/59500283/155388804-95e2aeb2-7f21-456e-bb09-ebc4cecf9253.png">
 <img width="590" alt="Carry_Symbol" src="https://user-images.githubusercontent.com/59500283/155388883-20e31e93-54c2-497b-9062-3c1d7e855d4c.png">
+
+## Sum_Block and it's Symbol
+<img width="1440" alt="Sum_Block" src="https://user-images.githubusercontent.com/59500283/155390426-86a5188d-2bf9-46fc-9396-1412fb35c22c.png">
+<img width="1432" alt="Sum_Symbol" src="https://user-images.githubusercontent.com/59500283/155390464-23c4c947-44cc-4dde-8aed-828c80fe98f7.png">
+
 
 ## Parameters set for Voltage Source for Input A
 <img width="357" alt="A_Pulse" src="https://user-images.githubusercontent.com/59500283/155388964-19e9a68d-e11c-4b39-8a08-1bdd65005658.png">
