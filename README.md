@@ -3,6 +3,7 @@
   * [Reference Circuit Details](#reference-circuit-details)
   * [Reference Circuit Diagram](#reference-circuit-diagram)
   * [Reference Circuit Waveform](#reference-circuit-waveform)
+  * [Desirable Truth Table](#desirable-truth-table)
 - [Simulation in Synopsys](#simulation-in-synopsys)
   * [Schematic](#schematic)
   * [Parameters set for Voltage Source for Input A](#parameters-set-for-voltage-source-for-input-a)
@@ -192,7 +193,9 @@ Thus, the addition for a single-bit is achieved using 28T full adder.
 ## References
 1)Analysis and Performance Evaluation of 1-bit Full Adder Using Different Topologies
 http://pnrsolution.org/Datacenter/Vol5/Issue1/26.pdf
+
 2)Power and Delay Comparison in between Different types of Full Adder Circuits
 https://www.ijareeie.com/upload/september/7_Power%20and%20Delay%20Comparison.pdf
+
 3)Youtube Video - https://www.youtube.com/watch?v=AXU_J4wr_yA
   
