@@ -1,5 +1,4 @@
-# Full_Adder_IITH_Hackathon
-# Feynman Gate 
+# 28T_Full_Adder using 28nm CMOS Technology
   * [Abstract](#abstract)
   * [Reference Circuit Details](#reference-circuit-details)
   * [Reference Circuit Diagram](#reference-circuit-diagram)
@@ -21,45 +20,10 @@
 
 
 ## Abstract
-
-Reversible logic is very effective and important in the formation of low power circuit.
-
-The aim of low power VLSI circuits is to reduce the power dissipation. 
-
-It is called reversible when it reverses the output. 
-
-It is completely specified N-output, n-input Boolean function and it maps each output to a unique input and vice versa. 
-
-The reversible logic operations do not remove the information and has zero heat dissipation. 
-
-The circuit operates in a backward operation, allows reproducing the inputs from the outputs and consumes zero power. 
-
-A Feynman Gate is one such reversible gate.[1]
+Full adder is an essential component for the design and development of all types of processors like digital signal processors (DSP), microprocessors etc. In most of these systems adder lies in the critical path that affects the overall speed of the system.An adder is a digital circuit that performs addition of numbers and it plays an important role in today’s digital world. In processors and other kinds of computing devices, Adders are used in the arithmetic logic units. They are also utilized in other parts of the processors for calculating addresses, table indices, increment and decrement operations and other similar operations because it is the basic building block of on-chip libraries. Also, it can be used for the construction of many number representations and it is a trivial to modify an adder into an adder-subtractor. Full adder reduces circuit complexity and can be integrated in the calculators for addition and subtraction operations. At DSP oriented system and at networking side full adder is used mostly. Full adders can be cascaded (e.g.: ripple carry adder) easily so that one can make a cascade to add any number of bits that form the word- width of a system.
 ## Reference Circuit Details
 
-Feynman Gate is a 2×2 reversible logic gate. 
-
-The inputs are A, B, and the outputs are P, Q. 
-
-P=A gives the outputs of this gate, Q=A⊕B. 
-
-Thus the input A gets passed to P and Q gives the output as an XOR of A and B. 
-
-The Quantum cost of an FG is calculated to be 1. 
-
-Fan-out is not used in reversible logic. 
-
-Cab of the gate is used to get the desired net. 
-
-The corresponding circuit using MOSFETs has been as shown. 
-
-Here eight CMOS transistor has been used in this design. 
-
-The model can be used as an improved EXOR gate with a reversibility feature. 
-
-It can be easily verified from the output waveform that design works well for both forward and reverse directions. 
-
-There is also a CMOS pass transistor as shown in the figure M5 and M6 to pass the inputs. [2]
+Conventional CMOS Full Adder is the most basic full adder implementation techniques. Conventional CMOS Full Adder consists of 28 transistors. A, B and Cin are the inputs and Sum & Cout are the outputs. Static logic provides robustness against noise effects, so automatically provides a reliable operation. Pseudo NMOS pass-transistor logic and reduce the number of transistors required to implement a given logic function but these suffer from static power dissipation. On the other hand, dynamic logic requires less silicon area for implementation of complex function but charge leakage and charge refreshing are required which reduces the frequency of operation. This circuit uses both NMOS and PMOS transistors. In Conventional CMOS Full Adder, there are many leakage paths which lead to more sub threshold leakage.
 
 ## Reference Circuit Diagram
 ![image](https://user-images.githubusercontent.com/58599984/155004906-3e55d52b-6090-4d4b-9f41-6f75b6e9cd37.png)
