@@ -17,6 +17,7 @@
   * [Output Waveform](#output-waveform)
   * [Netlist](#netlist)
   * [Conclusion](#conclusion)
+  * [Author](#author)
   * [Acknowledgement](#acknowlegement)
   * [References](#references)
 
@@ -195,6 +196,9 @@ xi15 a b c net33 gnd! net50 net55 sum_block
 
 ## Conclusion
 Thus, the addition for a single-bit is achieved using 28T full adder.
+
+## Author
+Mayur Dongre , Indian Institute of Information Technoology Nagpur.
 ## Acknowledgement
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
