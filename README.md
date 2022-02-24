@@ -4,6 +4,7 @@
   * [Reference Circuit Diagram](#reference-circuit-diagram)
   * [Reference Circuit Waveform](#reference-circuit-waveform)
   * [Desirable Truth Table](#desirable-truth-table)
+  * [Tools Used](#tools-used)
 - [Simulation in Synopsys](#simulation-in-synopsys)
   * [Inverter_Block](#inverter_block)
   * [Carry_Block](#carry_block)
@@ -36,7 +37,15 @@ Conventional CMOS Full Adder is the most basic full adder implementation techniq
 ![Full_adder_Truth_Table](https://user-images.githubusercontent.com/59500283/155389650-b7823b97-2f40-4cf2-bb7a-72e5364af9b2.jpeg)
 
 
+## Tools Used:
+• Synopsys Custom Compiler:
+ The Synopsys Custom Compiler™ design environment is a modern solution for full-custom analog, custom digital, and mixed-signal IC design. As the heart of the Synopsys Custom Design Platform, Custom Compiler provides design entry, simulation management and analysis, and custom layout editing features. This tool was used to design the circuit on a transistor level.
 
+• Synopsys Primewave:
+ PrimeWave™ Design Environment is a comprehensive and flexible environment for simulation setup and analysis of analog, RF, mixed-signal design, custom-digital and memory designs within the Synopsys Custom Design Platform. This tool helped in various types of simulations of the above designed circuit.
+
+• Synopsys 28nm PDK:
+ The Synopsys 28nm Process Design Kit(PDK) was used in creation and simulation of the above designed circuit.
 
 # Simulation in Synopsys
 ## Inverter_Block
@@ -190,6 +199,8 @@ Thus, the addition for a single-bit is achieved using 28T full adder.
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
+4. [Synopsys Team/Company](https://www.synopsys.com/)
+5. https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/
 ## References
 1)Analysis and Performance Evaluation of 1-bit Full Adder Using Different Topologies
 http://pnrsolution.org/Datacenter/Vol5/Issue1/26.pdf
