@@ -215,5 +215,6 @@ http://pnrsolution.org/Datacenter/Vol5/Issue1/26.pdf
 2)Power and Delay Comparison in between Different types of Full Adder Circuits
 https://www.ijareeie.com/upload/september/7_Power%20and%20Delay%20Comparison.pdf
 
-3)Youtube Video - https://www.youtube.com/watch?v=AXU_J4wr_yA
+3)[Youtube Video](https://www.youtube.com/watch?v=AXU_J4wr_yA)
+
   
